@@ -58,6 +58,14 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #fff;
 }
 
+.intro__suptitle {
+	font-size: 72px;
+	color: #fff;
+	font-family: 'Kaushan Script', cursive;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
 /*Header*/
 .header {
 	width: 100%;
@@ -79,14 +87,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 30px;
 	font-weight: 700;
 	color: #fff;
-}
-
-.intro__suptitle {
-	font-size: 72px;
-	color: #fff;
-	font-family: 'Kaushan Script', cursive;
-	text-align: center;
-	margin-bottom: 20px;
 }
 
 /*NAV*/
@@ -122,10 +122,14 @@ h1, h2, h3, h4, h5, h6 {
 	color: #f5e28e;
 }
 
-.nav__link:hover:after {
+.nav__link:hover:after,
+.nav__link.active:after {
 	opacity: 1;
 }
 
+.nav__link.active {
+	color: #f5e28e;
+}
 /*Buttons*/
 
 .btn {
@@ -144,4 +148,51 @@ h1, h2, h3, h4, h5, h6 {
 .btn:hover {
 	background-color: #fff;
 	color: #333;
+}
+
+/* Slider */
+
+.slider {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	width: 100%;
+}
+
+.slider__inner {
+	display: flex;
+	justify-content: space-between;
+}
+
+.slider__item {
+	position: relative;
+	width: 23%;
+	padding: 20px 0;
+	border-top: 3px solid #fff;
+	font-size: 18px;
+	color: white;
+	text-transform: uppercase;
+	opacity: 0.7;
+}
+
+.slider__item.active {
+	opacity: 1;
+}
+
+.slider__item.active:before {
+	content: "";
+	background-color: #f38181;
+	display: block;
+	width: 70px;
+	height: 4px;
+	position: absolute;
+	top: -3px;
+	left: 0;
+	z-index: 1;
+}
+
+.slider__number {
+	font-size: 24px;
+	font-weight: 700;
 }
